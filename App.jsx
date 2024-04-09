@@ -11,10 +11,6 @@ export default function App() {
         { value: 'track', label: 'track' },
         { value: 'artist', label: 'artist' },
     ];
-    const carouselStyles = {
-        "width": "640px",
-        "margin": "auto"
-    };
 
     async function fetchData() {
         const baseURL = 'https://www.apitutor.org/spotify/simple/v1/search';
@@ -48,17 +44,17 @@ export default function App() {
                 <h1> Spotify Demo </h1>
             </header>
             <main>
-                <div>
+                <div className="form">
                     <Space direction="vertical" size="middle">
                         <Space.Compact size="large">
                             <Select style={{ width: '18%' }} defaultValue="album" onChange={value => setType(value)} options={options} />
                             <Input style={{ width: '12%' }} type="number" defaultValue={1} onChange={e => setLimit(e.target.value)} placeholder="Limit" />
                             <Input style={{ width: '70%' }} onChange={e => setSearchTerm(e.target.value)} placeholder="Search Term" />
-                            <Button onClick={fetchData}>Search</Button>
+                            <Button className="searchButton" onClick={fetchData}>Search</Button>
                         </Space.Compact>
                     </Space>
                 </div>
-                <div style={carouselStyles}>
+                <div className="carousel">
                     <Carousel dotPosition="top">
                         {
                             data.map(jsonToJSX)

@@ -15,3 +15,22 @@ main {
     margin: auto;
     padding: 30px;
 }
+
+.form {
+    width: 640px;
+    margin: auto;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel {
+    width: 640px;
+    margin: auto;
+    padding: 40px;
+}
+
+.searchButton {
+    background-color: lightseagreen;
+}
